@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Korean Cosmetics</title>
+    <style>
+        body {
+            margin: auto;
+            padding: 20px;
+            font-family: "calibri";
+            background-image: url(cosmetica\ coreana\ 1.jpeg);
+            background-size: 200vh;
+            display: flex;
+            flex-direction: column; /* Apila los 'item-pair' verticalmente */
+            justify-content: center; /* Centra la columna de pares verticalmente */
+            align-items: flex-start;
+            min-height: 100vh;
+            box-sizing: border-box;
+            gap: 30px; /* Espacio entre cada par (fila) apilado verticalmente */
+            
+
+        }
+
+         /* --- Contenedor para cada par de Texto + Imagen --- */
+        .item-pair {
+            display: flex;
+            justify-content: space-between; /* Empuja el texto a la izquierda y la imagen a la derecha */
+            align-items: center; /* Alinea texto e imagen verticalmente en el centro del par */
+            width: 95%; /* Ancho del par para que no sea demasiado grande */
+            max-width: 900px; /* Ancho máximo para el par */
+            gap: 250px; /* Espacio entre el cuadro de texto y la imagen dentro del par */
+            padding: 15px; /* Pequeño padding para el par */
+            border-radius: 10px;
+            /* background-color: rgba(0, 0, 0, 0.05); /* Opcional: un fondo ligero para ver los pares */
+        }
+
+        .text-box {
+            background-color: rgba(195, 113, 161, 0.5);
+            border: 10px solid palevioletred;
+            padding: 30px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 500px;
+            flex-shrink: 0;
+            border-radius: 64px;
+
+            /* --- ESTADOS INICIALES (oculto y borroso) --- */
+            transform: translateX(-150%);
+            filter: blur(10px);
+            opacity: 0;
+
+            /* --- TRANSICIÓN --- */
+            /* Aplica la transición a todas las propiedades que cambian */
+            transition: transform 1.5s ease-out, filter 1.5s ease-out, opacity 1.5s ease-out;
+            /* Duración: 1.5 segundos, Tipo: ease-out (empieza rápido, termina lento) */
+        }
+
+         /* --- Estilos para las imágenes --- */
+        .image-item { /* Aplicamos estilos directamente a la imagen */
+            max-height: 400px; /* Tamaño de las imágenes */
+            width: auto; /* Mantiene la proporción */
+            border-radius: 8px;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+            flex-shrink: 0; /* Evita que la imagen se encoja */
+            
+            /* --- ESTADO INICIAL IMAGEN: Desde la derecha, borroso, invisible --- */
+            transform: translateX(150%);
+            filter: blur(10px);
+            opacity: 0;
+
+            /* --- TRANSICIÓN IMAGEN --- */
+            transition: transform 1.5s ease-out, filter 1.5s ease-out, opacity 1.5s ease-out;
+        }
+
+           /* --- ESTADO FINAL (para ambos: texto e imagen) --- */
+        /* Esta clase se añade cuando el elemento entra en la vista */
+        .text-box.show,
+        .image-item.show {
+            transform: translateX(0); /* Vuelve a su posición original */
+            filter: blur(0);
+            opacity: 1;
+        }
+
+        h1 {
+            color: #cb056b;
+            margin-bottom: 15px;
+        }
+        p {
+            color: #9f0760;
+            line-height: 1.6;
+            text-align: justify;
+        }
+        h2 {
+            color: #cb056b;
+            text-align: left;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) { 
+            body {
+                padding: 10px; /* Reduce padding general en móviles */
+                align-items: center; /* Centra la columna de pares en móviles */
+                gap: 40px; /* Ajusta el espacio en móviles */
+            }
+
+            .item-pair {
+                flex-direction: column; /* Apila texto e imagen en pantallas pequeñas */
+                width: 95%;
+                gap: 15px;
+                align-items: center;
+            }
+            .text-box {
+                width: 90%; /* Ancho más flexible en móviles */
+                max-width: 400px;
+                text-align: center;
+            }
+            .image-item {
+                max-height: 120px;
+            }
+            /* Ajustar animaciones para móviles si se apilan */
+            .text-box, .image-item {
+                transform: translateY(-100%); /* Ambos vienen de arriba si se apilan */
+            }
+            .text-box.show, .image-item.show {
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="item-pair">
+    <div class="text-box">
+        <h1>5 Razones que hacen de los Cosmeticos Coreanos los Mejores del Mundo</h1>
+    </div>
+    <img class="image-item" src="Cosmeticos coreanos 5.jpg" alt="Imagen 1">
+    </div>
+
+    <div class="item-pair">
+        <div class="text-box">
+        <h2>¿Por Qué los Cosmeticos coreanos son tan buenos?</h2>
+        <p>Para nadie es un secreto que los <strong>Cosmeticos Coreanos</strong> son muy recomendados, teniendo una difusion considerable en países como Estados Unidos, Francia y España</p>
+        <p>Es muy evidente que también hay una reputación que da un gran soporte a este mercado y es que <strong>¿Qué mujer no desearía tener una piel tan limpia y tersa como la de una hermosa mujer coreana?</strong> Por supuesto, las mujeres coreanas no tienen un cutis impecable de la nada. Ciertamente, hay toda una variedad de productos cosmeticos que hacen de la belleza coreana una de las mas resaltantes en el mundo</p>
+        <p>Entonces, <strong>¿Por qué los cosmeticos coreanos son tan buenos?</strong> Pues aquí te mostramos varios aspectos por los cuales son tan buenos,y porque deberías usarlos</p>
+    </div>
+    <img class="image-item" src="Cosmeticos coreanos 6.jpg" alt="Imagen 2">
+    </div>
+
+    <div class="item-pair">
+    <div class="text-box">
+        <h2>Los Cosmeticos Coreanos son a base de productos naturales</h2>
+        <p>En Corea el cuidado de la piel siempre ha tenido una muy estrecga relación con elementos de la naturaleza. Son sumamente cuidadosos en la investigación de que productos son realmente efectivos, cuales no son agresivos, para que tipo de piel sirven.</p>
+        <p>Algunos de los más Utilizados son Bmbú, centella asiática, aceite de coco, entre otros, todos de muy alta calidad <strong>¡siempre tratando al minimo de utilizar compuestos químicos en su elaboración!</strong></p>
+        <p>Hay que resaltar que esta dinámica surge de la elaboración de remedios caseros muy antiguos, que al día de hoy aún son muy utilizados. Y no solo elemntos naturales originarios de oriente, sino de todo el mundo, siempre abiertos a nuevas formas de cuidar la piel</p>
+    </div>
+    <img class="image-item" src="cosmetica coreana 3.jpg" alt="Imagen 3">
+    </div>
+
+    <div class="item-pair">
+    <div class="text-box">
+        <h2>No solo mas efectivos, también mas economicos</h2>
+        <p>Los <strong>cosméticos coreanos</strong> siempre han tenido una muy fuerte competencia dentro del mercado, sobre todo productos para el cuidado de la piel ¡Esto representa básicamente el 50% de los componentes fabricados en la industria!</p>
+        <p>Desde empresas muy pequeñas hasta grandes transnacionales, existe una gran variedad de marcas y productos de donde elegir, por supuesto <strong>¡El consumidor siempre elegirá la que le presente, la mejor relación calidad precio!</strong> Esto empuja a estas empresas a siempre crea productos muy eficaces y accesibles económicamente</p>
+        <p>Es algo muy notable en su dinámica empresarial, dejando de lado los productos genéricos, dándole mayor atención a elaboracion de productos de gama prémiun, superprémiun y profesional a gran escala ¡Todo esto por el mejor precio posible! Estamos Hblando de productos de excelente calidad por un precio razonable</p>
+    </div>
+    <img class="image-item" src="Cosmeticos coreanos 7.jpg" alt="Imagen 3">
+    </div>
+
+    <div class="item-pair">
+    <div class="text-box">
+        <h2>Constante innovación</h2>
+        <p>Como se mencionó en puntos anteriores acerca de la variedad e importancia del cuidado de la piel, cabe destacar <strong>¡El conocimiento en el campo del cuidado de la piel no tiene límites!</strong> Y la industria de los <strong>cosméticos coreanos</strong> están consciente de esto</p>
+        <p>Siempre esta en constante descubrimiento de nuevas soluciones, mejora de sus productos, creación de productos cosméticos innovadores para tener una apariencia de la piel casi perfecta</p>
+        <p>Siempre está examinado las necesidades de sus clientes, creando soluciones rápidas y estratégicas sin dejar de lado la eficacia que siempre han demostrado tener. Constantemente <strong> los productos más utilizados en las rutinas de skincare</strong> tanto de hombres como mujeres</p>
+        <p>En su insistencia por mejorar su calidad y variedad, resaltan mucho los <strong>cosméticos anti-edad</strong> que han demostrado realmente retrasar el envejecimiento, así como los productos <strong>aptos para piel joven</strong>, ya que ¡No todos los cosméticos tienen el mismo efecto tratándose de la edad de la piel! Por ello hay una <strong>gran variedad de kits dentro de k-beauty</strong> para mantener una piel perfecta desde una edad muy temprana</p>
+    </div>
+    <img class="image-item" src="Cosmeticos coreanos 8.jpg" alt="Imagen 3">
+    </div>
+
+    <div class="item-pair">
+    <div class="text-box">
+        <h2>Corea: histora, arte y cultura del cuidado de la piel</h2>
+        <p>El cuidado de la piel en corea es algo que surgió muchos siglos atrás. Podríamos decir que tienen mucho terreno ganado en cuanto a conocimiento del tratamiento de la piel, mucho mas que otras culturas, algo en lo que evidentemente se han especializado</p>
+        <p>Pero <strong>¿Por qué tanto interés en el cuidado de la piel?</strong></p>
+        <p><strong>¡Para los coreanos el aspecto físico refleja mucho como eres internamente!</strong> Entonces, si tu apariencia es descuidada o maltratada, eso te traerá desventajas dentro de una sociedad coreana, desde relaciones interpersonales hata puestos de trabajo</p>
+        <p>Es por esto tanto esfuerzo en su apariencia física, y claro, los <strong>cosméticos coreanos</strong> tienen esta finalidad <strong>¡hacer par el coreano esta tarea más efectiva y mas sencilla!</strong></p>
+    </div>
+    <img class="image-item" src="Cosmeticos coreanos 9.jpg" alt="Imagen 3">
+    </div>
+
+    <div class="item-pair">
+    <div class="text-box">
+        <h2>Cosméticos para hombres como mujeres por igual</h2>
+        <p>A nivel mundial queda demostrado que las empresas prestan mucha mas atención a la venta de productos para el cuidado de la piel de las mujeres ¡le presta poca atencion a los cuidados de la apariencia en hombres! Esto es algo que en corea no aplica, ya que como mencionó en puntos anteriores, la apariencia física para ellos es muy importante, tanto en hombres como mujeres</p>
+        <p>por lo tanto, una gran parte de los <strong>cosmeticos coreanos</strong> está dedicado también al cuidado de la piel de los hombres, tanto en maquillaje como cremas, tónicos y otros. Aunque la diferencia no es notable, demuestra la versatilidad que tienen en la atencion que les dan a todos sus clientes</p>
+    </div>
+    <img class="image-item" src="Cosmeticos coreanos 10.jpg" alt="Imagen 3">
+    </div>
+
+    <div class="item-pair">
+    <div class="text-box">
+        <p>Es mas que evidente que los cosméticos coreanos son excelentes, y él por qué es más que obvio <strong>¡Prestan atención al más mínimo detalle para una apariencia prácticamente perfecta</strong>. Uso de elementos no invasivos para la salud, constante actualización en la mejora de sus productos, una relación calidad precio que hacen de ellos lo que son hoy... <strong>Los mejores cosméticos en el mercado</strong></p>
+        <p>Pero, más allá de ser excelente,el cuidado extremo de la piel está en la sangre de los coreanos! De su cultura surgen los fundamentos de su eficacia. La mayoria de rutinas de skincare, recetas para cremas caceras, entre otros, que se sueln recomendar mucho en redes sociales, son originarias de este país.</p>
+        <p>Desde siempre una apariencia saludable ha sido su prioridad, comparten este principio en la elaboración de sus cosmeticos. Asi que, para tener una piel saludable, los cosmeticos coreanos son la mejor opción</p>
+    </div>
+    <img class="image-item" src="Cosmeticos coreanos 11.jpg" alt="Imagen 3">
+    </div>
+
+    <script>
+         document.addEventListener('DOMContentLoaded', () => {
+            const itemPairs = document.querySelectorAll('.item-pair');
+            const intraPairDelay = 200; // Retraso adicional para la imagen dentro del mismo par
+
+            // Opciones para el Intersection Observer
+            const observerOptions = {
+                root: null, // El viewport es el root
+                rootMargin: '0px', // No hay margen extra alrededor del root
+                threshold: 0.1 // El elemento se considera "visible" cuando al menos el 10% de él está en el viewport
+            };
+
+            // Callback que se ejecuta cuando un elemento entra o sale del viewport
+            const observerCallback = (entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) { // Si el elemento está visible
+                        const pair = entry.target;
+                        const textBox = pair.querySelector('.text-box');
+                        const imageItem = pair.querySelector('.image-item');
+
+                        // Anima el cuadro de texto
+                        textBox.classList.add('show');
+
+                        // Anima la imagen con un pequeño retraso
+                        setTimeout(() => {
+                            imageItem.classList.add('show');
+                        }, intraPairDelay);
+
+                        // Deja de observar este elemento para que no se anime de nuevo
+                        observer.unobserve(pair);
+                    }
+                });
+            };
+
+            // Crea una nueva instancia del Intersection Observer
+            const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+            // Observa cada 'item-pair'
+            itemPairs.forEach(pair => {
+                observer.observe(pair);
+            });
+        });
+    </script>
+</body>
+</html>
